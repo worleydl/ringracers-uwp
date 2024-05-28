@@ -5,13 +5,27 @@
 #include "libuwp.h"
 #include <wrl.h>
 
+#include <winrt/Windows.ApplicationModel.Core.h>
 #include <winrt/Windows.UI.Composition.h>
 #include <winrt/Windows.Graphics.Display.Core.h>
 
 static int width = 0;
 static int height = 0;
 
+using namespace winrt::Windows;
+using namespace winrt::Windows::ApplicationModel::Core;
 using namespace winrt::Windows::Graphics::Display::Core;
+
+void uwp_GetBundlePath(char* buffer)
+{
+    sprintf_s(buffer, 1024, "%s", winrt::to_string(ApplicationModel::Package::Current().InstalledPath()).c_str());
+}
+
+void uwp_GetBundleFilePath(char* buffer, const char *filename)
+{
+    sprintf_s(buffer, 1024, "%s\\%s", winrt::to_string(ApplicationModel::Package::Current().InstalledPath()).c_str(), filename);
+}
+
 
 void uwp_GetScreenSize(int* x, int* y)
 {
