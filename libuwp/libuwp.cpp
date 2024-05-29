@@ -38,3 +38,8 @@ void uwp_GetScreenSize(int* x, int* y)
     *x = width;
     *y = height;
 }
+
+float uwp_GetRefreshRate()
+{
+    return HdmiDisplayInformation::GetForCurrentView().GetCurrentDisplayMode().RefreshRate();
+}
