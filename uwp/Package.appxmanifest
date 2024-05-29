@@ -38,7 +38,7 @@
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="Ring Racers"
         BackgroundColor="transparent">
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+	<!--<uap:SplashScreen Image="Assets\SplashScreen.png" /> -->
       </uap:VisualElements>
     </Application>
   </Applications>
